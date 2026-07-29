@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 
+   NAVBAR
+*/
+
+
+
+#Navbar {
+    width: 100%;
+    height: 80px;
+    background: #0B6E4F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* Logo */
+#logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+
+
+#welcome {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#phr {
+    color: #d1fae5;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-top: 3px;
+}
+
+/* Right Side */
+.welcomediv {
+    display: flex;
+    align-items: center;
+}
+
+#links {
+    display: flex;
+    gap: 20px;
+}
+
+#links a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+#links a:hover {
+    background: white;
+    color: #0F766E;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    padding: 0px;
+}
+
+.alert{
+    padding:12px;
+    margin:15px 0;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.success{
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+}
+
+.error{
+    background:#f8d7da;
+    color:#721c24;
+    border:1px solid #f5c6cb;
+}
+
+#formserch{
+    display: flex;
+    justify-content: center;
+}
+/* Search Form */
+form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+form input[type="text"] {
+    width: 320px;
+    max-width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+form input[type="text"]:focus {
+    border-color: #0B6E4F;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+form button {
+    padding: 12px 24px;
+    background: rgb(235, 171, 52);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #0B6E4F;
+}
+
+.medicine-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    margin: 20px;
+}
+
+.medicine-card{
+    width:360px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    padding:20px;
+    transition:0.3s;
+}
+
+.medicine-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.image-box{
+    width:100%;
+    height:240px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    border-radius:10px;
+    /* background:#f1f1f1; */
+    margin-bottom:15px;
+    /* border: #000 1px solid; */
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.medicine-card h2{
+    color:#0B6E4F;
+    text-align:center;
+    margin-bottom:15px;
+    font-size:26px;
+}
+
+.medicine-card p{
+    margin:8px 0;
+    color:#444;
+    font-size:15px;
+    line-height:1.5;
+    border-bottom:1px solid #e8e8e8;
+    padding-bottom:4 px;
+}
+
+.medicine-card p strong{
+    color:#000;
+}
+
+@media(max-width:768px){
+
+    .medicine-card{
+        width:95%;
+    }
+
+    .image-box{
+        height:180px;
+    }
+
+    .medicine-card h2{
+        font-size:22px;
+    }
+}
+
+#footdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #0B6E4F;
+    color: #9FE1CB;
+    min-height: 10px;
+    padding: 10px;
+    gap: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    /* margin-top: 20px; */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #footdiv {
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #footdiv {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        gap: 8px;
+        height: auto;
+    }
+
+    #footdiv p,
+    #footdiv a,
+    #footdiv span {
+        font-size: 14px;
+    }
+}
+#editcard {
+    background-color: rgb(11, 66, 11);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#editcard a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+}
+
+#editcard:hover {
+    background-color: orange;
+    transform: translateY(-2px);
+}
+ 

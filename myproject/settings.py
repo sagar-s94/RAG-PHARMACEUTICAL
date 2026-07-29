@@ -21,13 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 import os
-SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-gb89_!7@bz-^s3rkc5-*emjy7t-khz1dwl940bfg4jzdtrnj^0"
+)
+
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = [".onrender.com", "127.0.0.1", "localhost"]
-
 
 # Application definition
 

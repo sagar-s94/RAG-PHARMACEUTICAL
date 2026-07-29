@@ -1,0 +1,288 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7f6;
+}
+
+    
+        /* Navbar */
+#Navbar{
+    width:100%;
+    min-height:90px;
+    background:#0B6E4F;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+    box-sizing:border-box;
+    color:white;
+    flex-wrap:wrap;
+}
+
+/* Logo */
+#logo{
+    width:65px;
+    height:65px;
+    /* object-fit:contain; */
+}
+
+/* Logo Text */
+#welcome{
+    font-family:Arial, sans-serif;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:3px;
+    color:#E1F5EE;
+    margin:0;
+}
+
+#phr{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    letter-spacing:4px;
+    color:#9FE1CB;
+    margin:0;
+}
+
+/* Navigation */
+.welcomediv{
+    display:flex;
+    align-items:center;
+}
+
+#links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    padding:10px 20px;
+    border-radius:6px;
+    transition:.3s;
+}
+
+#links a:hover{
+    /* background:#ffffff; */
+    color:orange;
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+    #Navbar{
+        padding:15px 20px;
+    }
+
+    #logo{
+        width:60px;
+        height:60px;
+    }
+
+    #welcome{
+        font-size:24px;
+    }
+
+    #phr{
+        font-size:12px;
+        letter-spacing:2px;
+    }
+
+    #links a{
+        font-size:16px;
+    }
+}
+
+/* Mobile */
+@media (max-width:600px){
+
+    #Navbar{
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        gap:15px;
+        padding:20px;
+    }
+
+    #logo{
+        width:55px;
+        height:55px;
+    }
+
+    #welcome{
+        font-size:22px;
+    }
+
+    #phr{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .welcomediv{
+        width:100%;
+        justify-content:center;
+    }
+
+    #links a{
+        display:block;
+        width:180px;
+        margin:auto;
+    }
+}
+
+/* Reset */
+
+
+/* Body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fc;
+}
+
+/* Main Container */
+#bodydiv {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* Profile Card */
+#profilediv {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-top: 6px solid #0B6E4F;
+    transition: 0.3s ease;
+}
+
+#profilediv:hover {
+    transform: translateY(-5px);
+}
+
+/* Heading Labels */
+#profilediv strong {
+    display: block;
+    color: #0B6E4F;
+    font-size: 15px;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Name */
+#profilediv h2 {
+    color: #222;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+/* Details */
+#profilediv p {
+    font-size: 16px;
+    color: #555;
+    padding: 10px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0B6E4F;
+    word-wrap: break-word;
+}
+
+/* Tablet  */
+@media (max-width: 768px) {
+
+    #bodydiv {
+        padding: 20px;
+    }
+
+    #profilediv {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    #profilediv h2 {
+        font-size: 24px;
+    }
+
+    #profilediv p {
+        font-size: 15px;
+    }
+}
+
+/*  Mobile -
++ */
+@media (max-width: 480px) {
+
+    #bodydiv {
+        padding: 15px;
+    }
+
+    #profilediv {
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #profilediv h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    #profilediv strong {
+        font-size: 14px;
+    }
+
+    #profilediv p {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+#footdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #0B6E4F;
+    color: #9FE1CB;
+    min-height: 10px;
+    padding: 10px;
+    gap: 25px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #footdiv {
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #footdiv {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        gap: 8px;
+        height: auto;
+    }
+
+    #footdiv p,
+    #footdiv a,
+    #footdiv span {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7f6;
+}
+
+
+#Navbar {
+    width:100%;
+    height:90px;
+    background:#0B6E4F;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    color:white;
+    
+}
+.welcomediv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width:600) {
+    .welcomediv{
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;
+        
+
+    }
+}
+#welcome{
+    font-family: Arial, sans-serif;
+    font-weight:900;
+    font-size: 30px;
+font-weight: 700;
+letter-spacing: 3px;
+color: #E1F5EE;
+}
+
+
+@media (max-width:700px) {
+    #welcome{
+        font-size: 20px;
+        /* letter-spacing: 1px; */
+    }
+    
+}
+#phr{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+font-weight: 400;
+letter-spacing: 5px;
+color: #9FE1CB;
+}
+@media (max-width:600px) {
+
+#phr{
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+    
+}
+.medicine {
+
+    text-decoration: none;
+    font-size: medium;
+    /* background-color:cornsilk; */
+    border-radius: 10px;
+
+}
+#linkdiv{
+    height: 40%;
+    width: 40%;
+    /* border: 1px,solid,black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+@media (max-width:600px) {
+ 
+ #linkdiv{
+    
+    display: none;
+ }
+ 
+}
+#icon{
+    display: none;
+}
+@media (max-width:600px) {
+    #icon{
+        display: block;
+    }
+    
+}
+
+
+.link {
+    color:white;
+    text-decoration: none;
+    font-family:sans-serif;
+    /* background-color: white; */
+    border-radius: 2px;
+}
+.link:hover{
+    background-color: #97a7b6;
+}
+
+
+#logo {
+    height: 90%;
+    width: 20%;
+    border-radius: 5px;
+}
+@media (max-width:600px) {
+    #logo{
+        width: 30%;
+    }
+    
+}
+
+body{
+    background:#f4f7fb;
+}
+.alert{
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+    padding:12px;
+    margin-bottom:20px;
+    border-radius:5px;
+    font-weight:bold;
+}
+#remark{
+    width: 50%;
+}
+.container{
+    width:95%;
+    max-width:1000px;
+    margin:40px auto;
+}
+
+.form-box{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.form-box h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#0B6E4F;
+}
+
+form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:6px;
+    font-weight:600;
+    color:#333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#0B6E4F;
+    box-shadow:0 0 5px rgba(27,79,114,.3);
+}
+
+.form-group textarea{
+    resize:vertical;
+    min-height:100px;
+}
+
+.form-group:last-child{
+    grid-column:1/3;
+}
+
+button{
+    width:200px;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#0B6E4F;
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:orange;
+}
+
+/* Tablet */
+@media(max-width:768px){
+
+    form{
+        grid-template-columns:1fr;
+    }
+
+    .form-group:last-child{
+        grid-column:auto;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
+
+/* Mobile */
+@media(max-width:480px){
+
+    .form-box{
+        padding:20px;
+    }
+
+    .form-box h2{
+        font-size:22px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+        padding:10px;
+    }
+
+}
+
+#footdiv{
+    width:100%;
+    background:#0B6E4F;
+    color:#d5fff2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    padding:18px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
