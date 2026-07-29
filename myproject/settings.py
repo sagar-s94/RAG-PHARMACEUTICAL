@@ -59,12 +59,23 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 import dj_database_url
-DATABASES = {
-    "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
-    )
-}
-
+if os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=os.environ.get("DATABASE_URL")
+        )
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "medicine",
+            "USER": "postgres",
+            "PASSWORD": "9417672741",
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
+    }
 ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
