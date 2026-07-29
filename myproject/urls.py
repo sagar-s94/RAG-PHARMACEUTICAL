@@ -23,7 +23,7 @@ urlpatterns = [
     path("",include("dashboard.urls")),
     path("medicine/",include("medicine.urls")),
     path("inventory/",include("inventory.urls")),
-    path("order/",include("orders.urls")),
+
     path("custmor",include("custmor.urls")),
     path('admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
