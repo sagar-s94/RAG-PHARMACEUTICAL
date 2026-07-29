@@ -1,0 +1,73 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy</title>
+    <link rel="stylesheet" href="{%static 'ay_view.css'%}">
+</head>
+<body>
+
+     <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+
+        <div class="welcomediv">
+
+            <div>
+                <h2 id="welcome">RAG</h2>
+                <p id="phr">PHARMACEUTICAL</p>
+            </div>
+
+            <div id="links">
+                <a href="">medicine detail</a>
+
+            </div>
+
+        </div>
+
+    </nav> <br>
+ 
+     <h1 id="heading">Ayurvedic Medicine</h1>
+      <div id="bodydiv">
+      
+        <table id="table">
+            <thead>
+                <tr class="row">
+                    <th class="th">id</th>
+
+                    <th class="th">Name</th>
+                    <th class="th">cotegory</th>
+                    <th class="th">company</th>
+                    <th class="th">quanity</th>
+                    <th class="th">Packing_size</th>
+                    <th class="th">price</th>
+                    <th class="th">expirydate</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr class="row">
+                    <td class="td">{{i.id}}</td>
+                    <td class="td">{{i.name}}</td>
+                    <td class="td">{{i.category}}</td>
+                    
+                    <td class="td"> {{i.company}}</td>
+                    <td class="td"> {{i.quantity}}</td>
+                    <td class="td">{{i.packing_size}}</td>
+                    <td class="td"> {{i.price}}</td>
+                    <td class="td"> {{i.expirydate}}</td>
+                   
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+</body>
+</html>

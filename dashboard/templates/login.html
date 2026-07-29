@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Pharmacy | Admin Login</title>
+
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+
+        <div class="welcomediv">
+
+            <div>
+                <h2 id="welcome">RAG</h2>
+                <p id="phr">PHARMACEUTICAL</p>
+            </div>
+
+            <div id="links">
+                <a href="{%url 'cust_login'%}">Customer Login</a>
+                <a href="{% url 'cu_signup' %}">Customer Register</a>
+                <!-- <a href="{% url 'register' %}">Admin Register</a> -->
+                 <a href="{%url 'login' %}">Admin login</a>
+
+            </div>
+
+        </div>
+
+    </nav> <br>
+
+    <!--  MAIN SECTION  -->
+
+    <div class="container">
+
+        <!-- Login Image -->
+
+        <div id="imagediv">
+
+            <img src="{% static 'images/loginimage.jpg' %}" alt="Login Image">
+
+        </div>
+
+        <!-- Login Card -->
+
+        <div id="logincard">
+
+            <h2 style="text-align:center; margin-bottom:25px; color:#0B6E4F;">
+                Admin Login
+            </h2>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <label>Phone Number</label>
+
+                <input type="text" name="phone" placeholder="Enter Phone Number" required>
+
+                <label>Password</label>
+
+                <input type="password" name="password" placeholder="Enter Password" required>
+
+                <div id="error">
+    {{ message }}
+</div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+    </div>
+    <br>
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+
+</body>
+
+</html>

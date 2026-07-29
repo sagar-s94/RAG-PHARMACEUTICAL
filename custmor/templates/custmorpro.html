@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmcy_Custmor_Profile</title>
+    <link rel="stylesheet" href="{%static 'custmorpro.css' %}">
+</head>
+<body>
+   <nav id="Navbar">
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+          <div>
+                <h2 id="welcome">RAG</h2>
+                <p id="phr">PHARMACEUTICAL</p>
+            </div>
+
+        <div class="welcomediv">
+
+          
+
+            <div id="links">
+                <a href="{% url 'cust_login' %}">Customer Login</a>
+                <a href="{% url 'cu_signup' %}">Customer Register</a>
+                <!-- <a href="{% url 'register' %}">Admin Register</a> -->
+                <!-- <a href="{%url 'prchshistory'%}">Parchase History</a> -->
+
+            </div>
+
+        </div>
+
+    </nav> <br>
+
+    <div id="bodydiv">
+        {% for cusignups in cusignups %}
+      <div id="profilecard">
+        <strong>Name</strong><h2>{{cusignups.name}}</h2>
+        <strong>Email</strong><h3>{{cusignups.email}}</h3>
+        <strong>Phone</strong><h3>{{cusignups.phone}}</h3>
+        <strong>Profession</strong><h3>{{cusignups.profession}}</h3>
+        <strong>Organization</strong><h3>{{cusignups.organization}}</h3>
+        <strong>City</strong><h3>{{cusignups.city}}</h3>
+        <!-- <strong>Password</strong><h3>{{cusignups.password}}</h3> -->
+
+        
+      </div>
+      {% endfor %}
+    </div><br><br><br><br><br>
+   <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+</body>
+</html>

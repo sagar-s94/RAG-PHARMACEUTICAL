@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmcy _customer_signup</title>
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+
+        <div class="welcomediv">
+
+            <div>
+                <h2 id="welcome">RAG</h2>
+                <p id="phr">PHARMACEUTICAL</p>
+            </div>
+
+            <div id="links">
+                <a href="{% url 'cust_login' %}">Customer Login</a>
+
+             
+                
+
+            </div>
+
+        </div>
+
+    </nav> <br>
+    <div id="container">
+      <div id="imagediv"><img src="{% static 'images/signupimage.jpg' %}" alt=""></div>
+        <div id="logincard">
+
+        
+         <div id="cardbody">
+
+            <div id="card">
+                <h1 style="text-align:center; margin-bottom:25px; color:#0B6E4F;">Customer Sign Up</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                 
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        {{ form.name }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        {{ form.phone }}
+                    </div>
+ <div class="form-group">
+        <label for="profession">Profession</label>
+        <select name="profession" id="profession" required>
+            <option value="">-- Select Profession --</option>
+            <option value="Customer">Customer</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Pharmacist">Pharmacist</option>
+            <option value="Nurse">Nurse</option>
+            <option value="Hospital Staff">Hospital Staff</option>
+            <option value="Clinic Staff">Clinic Staff</option>
+            <option value="Medical Representative">Medical Representative</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+     <br>
+
+    <!-- Organization -->
+    <div class="form-group">
+        <label for="organization">Organization</label>
+        <select name="organization" id="organization" required>
+            <option value="">-- Select Organization --</option>
+            <option value="Hospital">Hospital</option>
+            <option value="Clinic">Clinic</option>
+            <option value="Pharmacy">Pharmacy</option>
+            <option value="Medical Store">Medical Store</option>
+            <option value="Nursing Home">Nursing Home</option>
+            <option value="Diagnostic Laboratory">Diagnostic Laboratory</option>
+            <option value="Medical College">Medical College</option>
+            <option value="Healthcare Company">Healthcare Company</option>
+            <option value="Pharmaceutical Company">Pharmaceutical Company</option>
+            <option value="Distributor">Distributor</option>
+            <option value="Wholesaler">Wholesaler</option>
+            <option value="NGO / Health Organization">NGO / Health Organization</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <br>
+  <div class="form-group">
+        <label for="city">City</label>
+        <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Enter your city"
+            required
+        >
+    </div>
+
+    <br>
+                    <div class="form-group">
+                        <label>Password</label>
+                        {{ form.password }}
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+                    <p class="login-text">Already Have Account?<a  class="login-link" href="{% url 'cust_login' %}">Login</a></p>
+
+
+
+                </form>
+
+
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+
+
+</body>
+
+</html>

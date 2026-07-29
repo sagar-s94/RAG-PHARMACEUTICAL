@@ -1,0 +1,174 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmcy_Stockin</title>
+    <link rel="stylesheet" href="{%static 'stockin.css' %}">
+</head>
+
+<body>
+    <div id="Navbar">
+        <img id="logo" src="{%static 'images/rag_logo.png'%}" alt="">
+        <div class="welcomediv">
+            <p id="welcome"> RAG</p>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+        <div id="linkdiv">
+
+            <a class="link" href="{%url 'stockqty'%}">Stock Qty</a>
+                   
+                    <a class="link" href="{%url 'update_stock' %}">Update Stockin</a>
+            <a class="link" href="{%url 'stockout'%}">Stock Out</a>
+           
+            
+
+            
+    
+        </div>
+    </div>
+   
+    <div class="container">
+        <div class="form-box">
+            <h2>Today Stock In</h2>
+        
+            <form method="POST">
+                {% csrf_token %}
+    <div class="form-group">
+                <label for="remark"><strong>Manualy write Month/year:</strong></label>
+                <input type="text" id="remark" placeholder="Add Remark" name="my">
+            </div>
+                <!-- <div class="form-group">
+                    <label for="date"><strong>Date:</strong></label>
+                    <input type="date" id="date"  required>
+                </div> -->
+
+
+
+                <div class="form-group">
+                    <label>Medicine ID</label>
+                    <input type="text" name="medicineid" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Invoice Number</label>
+                    <input type="text" name="invoice" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Medicine Name</label>
+                    <input type="text" name="medicinename" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Batch Number</label>
+                    <input type="text" name="batchno" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Current Stock</label>
+                    <input type="number" name="currentstock" required>
+                </div>
+                 <div class="form-group">
+                    <label>New Stock</label>
+                    <input type="number" name="newstock" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Unit</label>
+                    <select name="unit" required>
+                        <option value="">Select Unit</option>
+                        <option value="Tablet">Tablet</option>
+                        <option value="Capsule">Capsule</option>
+                        <option value="Syrup">Syrup</option>
+                        <option value="Suspension">Suspension</option>
+                        <option value="Injection">Injection</option>
+                        <option value="Cream">Cream</option>
+                        <option value="Ointment">Ointment</option>
+                        <option value="Gel">Gel</option>
+                        <option value="Lotion">Lotion</option>
+                        <option value="Drops">Drops</option>
+                        <option value="Spray">Spray</option>
+                        <option value="Inhaler">Inhaler</option>
+                        <option value="Powder">Powder</option>
+                        <option value="Sachet">Sachet</option>
+                        <option value="Granules">Granules</option>
+                        <option value="Mouthwash">Mouthwash</option>
+                        <option value="Gargle">Gargle</option>
+                        <option value="Solution">Solution</option>
+                        <option value="Emulsion">Emulsion</option>
+                        <option value="Infusion">Infusion</option>
+                        <option value="Patch">Patch</option>
+                        <option value="Suppository">Suppository</option>
+                        <option value="Shampoo">Shampoo</option>
+                        <option value="Soap">Soap</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Unit Price (₹)</label>
+                    <input type="text" name="unitprice" required>
+                </div>
+
+               
+
+                <div class="form-group">
+                    <label>Purchase Date</label>
+                    <input type="date" name="purchasedate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Supplier</label>
+                    <input type="text" name="supplier" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="date" name="expiredate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Status</label>
+                    <select name="status" required>
+                        <option value="">Select Status</option>
+                        <option value="In stock">In Stock</option>
+                        <option value="Out of stock">Out of Stock</option>
+                        <option value="Low Stock">Low Stock</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Last Update</label>
+                    <input type="date" name="lastupdate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Remark</label>
+                    <textarea name="remark" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Save Stock</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    
+ <div id="footdiv">
+            <h3> "Your health, our priority."</h3>
+
+            <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+                © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+        </div>
+ 
+
+</body>
+
+</html>

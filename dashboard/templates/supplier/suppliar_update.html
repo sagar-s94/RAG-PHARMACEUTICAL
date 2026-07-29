@@ -1,0 +1,101 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmacy|suppliar|update</title>
+    <link rel="stylesheet" href="{% static 'supplier/suppliar_update.css'%}">
+</head>
+
+<body>
+    <div id="Navbar">
+        <img id="logo" src="{%static 'images/rag_logo.png'%}" alt="">
+        <div class="welcomediv">
+            <p id="welcome"> RAG</p>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+        <div id="linkdiv">
+
+            <!-- <a class="link" href="{%url 'stockqty'%}">Inventory</a>
+            <a class="link" href="{%url 'placeorder'%}">Order</a>
+           
+            <a class="link" href="{%url 'medicinedetail' %}"> Medicine Detail</a> -->
+
+
+
+        </div>
+    </div> <br><br>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <form id="formserch" method="GET">
+
+        <input type="text" name="search" placeholder="Enter Medicine Name">
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+    <div class="table-container">
+        <table class="supplier-table">
+            <thead>
+                <tr>
+                    <th>Supplier ID</th>
+                    <th>Supplier Name</th>
+                    <th>Company Name</th>
+                    <th>Contact Person</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>GST No</th>
+                    <th>Drug Licence No</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for data in data %}
+                <tr>
+                    <td>{{ data.supplierid }}</td>
+                    <td>{{data.suppliername }}</td>
+                    <td>{{ data.companyname }}</td>
+                    <td>{{ data.contactperson }}</td>
+                    <td>{{ data.mobile }}</td>
+                    <td>{{ data.email }}</td>
+                    <td>{{ data.gstno }}</td>
+                    <td>{{ data.druglicence }}</td>
+                    <td>{{ data.address }}</td>
+                    <td>{{ data.city }}</td>
+                    <td>{{ data.state }}</td>
+                    <td>{{ data.status }}</td>
+                    <td><button id="editcard"> <a href="{% url 'supplier_edit' data.supplierid %}">Edit</a></button>
+                    </td>
+                    <td>
+                        <button id="deletcard">
+                            <a href="{% url 'supplier_delete' data.supplierid %}"
+                                onclick="return confirm('Are you sure you want to delete this supplier?')">
+                                Delete
+                            </a>
+                        </button>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy|Genrate|invoice</title>
+    <link rel="stylesheet" href="{%static 'geninvoice.css'%}">
+</head>
+
+<body>
+    <div id="Navbar">
+        <img id="logo" src="{%static 'images/rag_logo.png'%}" alt="">
+        <div class="welcomediv">
+            <p id="welcome"> RAG</p>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+        <div id="linkdiv">
+
+            <a class="link" href="{%url 'stockqty'%}">Inventory</a>
+
+            <!-- <a class="link" href="{%url 'placeorder'%}">Order</a> -->
+            <a class="link" href="{%url 'addsupplier' %}">Supplier</a>
+            <a class="link" href="{%url 'medicinedetail' %}"> Medicine Detail</a>
+
+
+
+        </div>
+    </div>
+    <br>
+
+    <div>
+        <div id="heading">
+            <h2>RAG PHARMACEUTICAL</h2>
+            <h3>Main Market, Chandigarh, Punjab</h3>
+            <h4>Phone: +91 98765 43210 | GST: 03ABCDE1234F1Z5</h4>
+        </div>
+        <div id="secnddiv">
+
+            <div class="innerdiv">
+                <strong>Invoice No: {{ sale.invoice }}</strong>
+                <strong>Customer:  {{ sale.customername }}</strong> 
+                <strong>Doctor:  {{ sale.doctor }}</strong> 
+
+            </div>
+            <div class="innerdiv">
+                <strong>Date: {{ sale.date }}</strong> 
+                <strong>Time:</strong> {{ sale.time }}
+                <strong>Payment:</strong> {{ sale.payment }}
+            </div>
+
+        </div>
+        <div id="thirddiv">
+            <h3>Medicine Detail</h3>
+            <table>
+
+                <thead>
+                    <th>Id</th>
+                    <th>Medicine Name</th>
+                    <th>Batch</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </thead>
+                <tr>
+                    <td>{{ sale.medicineid }}</td>
+                    <td>{{ sale.medicinename }}</td>
+                    <td>{{ sale.batchno }}</td>
+                    <td>{{ sale.outstock }}</td>
+                    <td>{{ sale.unitprice }}</td>
+                    <td>{{ sale.totalamount }}</td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="four-div">
+            <strong>Subtotal: <p>₹{{ total_amount }} </p></strong>
+            <strong>Discount: <p>10</p></strong>
+            <strong>GST:</strong>
+        </div>
+        <div id="Gtotal">
+            <strong>Grand Total:  ₹{{ total_amount }}</strong>
+        </div>
+        <div id="paydiv">
+            <h3>Payment Status:</h3>
+            <div>Remark</div>
+        </div>
+        <div id="sign">
+            <strong>Customer Signature</strong>
+            <strong>Authorized Signature</strong>
+        </div>
+
+        <button>Print Invoice</button>
+
+        <button>Download PDF</button>
+    </div>
+</body>
+
+</html>

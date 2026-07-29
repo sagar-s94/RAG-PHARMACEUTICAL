@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+
+        <div class="welcomediv">
+
+            <div>
+                <h2 id="welcome">RAG</h2>
+                <p id="phr">PHARMACEUTICAL</p>
+            </div>
+
+            <div id="links">
+                <a href=" {% url 'login' %}">Admin Login</a>
+                
+                <a href="{% url 'register' %}">Admin Register</a>
+
+            </div>
+
+        </div>
+
+    </nav> <br>
+<div id="container">
+
+    <div id="imagediv"><img src="{% static 'images/adminimage.jpg'%}" alt=""></div>
+
+    
+
+        <div id="card">
+            <h3 style="text-align:center; margin-bottom:25px; color:#0B6E4F;">Admin Sign Up</h3>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>Name</label>
+                    {{ form.name }}
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    {{ form.email }}
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    {{ form.phone }}
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    {{ form.password }}
+                </div>
+
+                <button type="submit">Register</button>
+
+
+
+            </form>
+
+
+
+        </div>
+
+     
+        
+        </div>      
+        <br>
+        <div id="footdiv">
+            <h3> "Your health, our priority."</h3>
+
+            <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+                © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+        
+</body>
+
+</html>

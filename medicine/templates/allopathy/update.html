@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy_update_medicine</title>
+    <link rel="stylesheet" href="{% static 'al_update.css' %}">
+</head>
+
+<body>
+
+     <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+            </div>
+
+        </div>
+
+    </nav> 
+<br>
+    <form id="formserch" method="GET">
+
+        <input type="text" name="search" placeholder="Enter Medicine Name">
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+
+
+    <table>
+
+        <tr>
+            <th class="th">ID</th>
+            <th class="th">Name</th>
+            <th class="th">cotegory</th>
+            <th class="th">Company</th>
+            <th class="th">quanity</th>
+            <th class="th">Packing_size</th>
+            <th class="th">price</th>
+            <th class="th">expirydate</th>
+            <th class="th">Action</th>
+            <th class="th">Delete Medicine</th>
+        </tr>
+
+        {% for medicine in medicines %}
+
+        <tr>
+
+            <td class="td">{{ medicine.id }}</td>
+            <td class="td">{{ medicine.name }}</td>
+
+            <td class="td">{{ medicine.company }}</td>
+            <td class="td">{{medicine.category}}</td>
+            <td class="td"> {{medicine.quantity}}</td>
+            <td class="td">{{medicine.packing_size}}</td>
+            <td class="td"> {{medicine.price}}</td>
+            <td class="td"> {{medicine.expirydate}}</td>
+
+
+            <td class="td">
+
+                <a href="{% url 'edit_medicine' medicine.id %}">
+                    Edit
+                </a>
+
+            </td>
+            <td class="td">
+             
+    <a href="{% url 'allopathy_medicine_delete' medicine.id %}">Delete</a>
+
+                </td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+            <td colspan="4">
+                No Medicine Found
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+</div>
+
+<div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+
+</body>
+
+</html>

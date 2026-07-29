@@ -1,0 +1,105 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmacy|suppliers</title>
+    <link rel="stylesheet" href="{%static 'supplier/addsupplier.css'%}">
+</head>
+<body>
+    <div id="Navbar">
+        <img id="logo" src="{%static 'images/rag_logo.png'%}" alt="">
+        <div class="welcomediv">
+        <p id="welcome"> RAG</p>
+        <p id="phr">PHARMACEUTICAL</p>
+        </div>
+        <div id="linkdiv">
+            
+            <a class="link" href="{%url 'stockqty'%}">Inventory</a>
+            <!-- <a class="link" href="{%url 'placeorder'%}">Order</a> -->
+           
+            <a class="link" href="{%url 'medicinedetail' %}"> Medicine Detail</a>
+            <a class="link" href="{%url 'supplierlist' %}">Supplier List</a>
+        
+        
+            
+        </div>
+    </div>
+
+    <div>
+        <form method="POST">
+            {%csrf_token%}
+           
+            <div>
+                <label>Supplier Name</label>
+                <input type="text" name="suppliername" placeholder="Enter supplier name" >
+            </div>
+            <div>
+                <label>Company Name</label>
+                <input type="text" name="companyname" placeholder="Enter company name">
+
+            </div>
+            <div>
+                <label>Contact Person</label>
+                <input type="text" name="contactperson" placeholder="Enter contact person name">
+            </div>
+            <div>
+                <label>Mobile</label>
+                <input type="text" name="mobile" placeholder="Enter 10-digit mobile number">
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="text" name="email"  placeholder="Enter email address">
+
+            </div>
+            <div>
+                <label>GST NO</label>
+                <input type="text" name="gstno" placeholder="Enter 15-character GST number">
+            </div>
+            <div>
+                <label>Drud Licence</label>
+                <input type="text" name="druglicence" placeholder="Enter drug licence number">
+            </div>
+            <div>
+                <label >Address</label>
+                <input type="text" name="address"  placeholder="Enter complete address">
+            </div>
+            <div>
+                <label>City</label>
+                <input type="text" name="city" placeholder="Enter city name">
+                
+            </div>
+            <div>
+                <label>State</label>
+                <input type="text" name="state"  placeholder="Enter state name">
+
+            </div>
+            <div>
+                  <label>Status</label>
+    <select name="status">
+        <option value="">-- Select Status --</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+    </select>
+                
+            </div>
+            <button>Save</button>
+        </form>
+    </div>
+ <div>
+<br>
+
+        <div id="footdiv">
+            <h3> "Your health, our priority."</h3>
+
+            <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+                © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+        </div>
+
+
+    
+</body>
+</html>

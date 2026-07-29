@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy</title>
+
+    <link rel="stylesheet" href="{% static 'al_add.css'%}">
+</head>
+
+<body>
+      <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+            </div>
+
+        </div>
+
+    </nav> 
+
+         <div class="hding">Add Allopathy Medicine</div>
+         <form method="POST" id="fform">
+        {% csrf_token %}
+        <div class="inputdiv">
+       
+
+            <label class="label">Medicine Name</label>
+            <input class="input" type="text" name="name" placeholder="Medicine Name">
+
+            <label class="label">Form</label>
+            <select name="category" class="label">
+              <option value="">Select Unit</option>
+                        <option value="Tablet">Tablet</option>
+                        <option value="Capsule">Capsule</option>
+                        <option value="Syrup">Syrup</option>
+                        <option value="Suspension">Suspension</option>
+                        <option value="Injection">Injection</option>
+                        <option value="Cream">Cream</option>
+                        <option value="Ointment">Ointment</option>
+                        <option value="Gel">Gel</option>
+                        <option value="Lotion">Lotion</option>
+                        <option value="Drops">Drops</option>
+                        <option value="Spray">Spray</option>
+                        <option value="Inhaler">Inhaler</option>
+                        <option value="Powder">Powder</option>
+                        <option value="Sachet">Sachet</option>
+                        <option value="Granules">Granules</option>
+                        <option value="Mouthwash">Mouthwash</option>
+                        <option value="Gargle">Gargle</option>
+                        <option value="Solution">Solution</option>
+                        <option value="Emulsion">Emulsion</option>
+                        <option value="Infusion">Infusion</option>
+                        <option value="Patch">Patch</option>
+                        <option value="Suppository">Suppository</option>
+                        <option value="Shampoo">Shampoo</option>
+                        <option value="Soap">Soap</option>
+                        <option value="Other">Other</option>
+            </select>
+
+
+            <label class="label">Company</label>
+            <input class="input" type="text" placeholder="Campany Name" name="company">
+
+            <label class="label">Quantity</label>
+            <input class="input" type="number" placeholder="Quantity" name="quantity">
+        </div>
+
+
+        <div class="inputdiv">
+
+            <label class="label">Packing Size</label>
+            <input class="input" type="text" placeholder="Packing Size" name="packing_size">
+
+
+
+            <label class="label">MRP</label>
+            <input class="input" type="text" placeholder="Price" name="price">
+
+            <label class="label">Expiry Date</label>
+            <input class="input" type="date" placeholder="Expiry Date" name="expirydate">
+            <label class="label">Availability</label>
+    
+        </div>
+
+        <button>Save</button>
+
+    </form>
+
+ <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+
+
+
+</body>
+
+</html>

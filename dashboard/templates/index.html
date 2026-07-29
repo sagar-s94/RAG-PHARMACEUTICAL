@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmcy</title>
+
+    <link rel="stylesheet" href="{%static 'index.css'%}">
+
+</head>
+
+<body>
+    <div id="Navbar">
+        <img id="logo" src="{%static 'images/rag_logo.png'%}" alt="">
+        <div class="welcomediv">
+            <p id="welcome"> RAG</p>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+        <div id="linkdiv">
+
+            
+          
+            <a class="link" href="{% url 'admin_logout' %}">Log out</a>
+
+
+
+        </div>
+    </div>
+    <hr>
+
+    <div id="medicards">
+
+        <div class="cards">
+            <h2> Medicine's</h2>
+            <a class="cardlink" href="{%url 'total_medicine'%}">View Medicines</a>
+        </div>
+        <div class="cards">
+            <h2> Customer 's</h2>
+            <a class="cardlink" href="{%url 'custmorpro'  %}">View Custmore</a>
+        </div>
+
+        <div class="cards">
+            <h2>Suppliers</h2>
+            <a class="cardlink" href="{%url 'addsupplier' %}">Supplier</a>
+
+        </div>
+        <div class="cards">
+            <h2>Genrate Invoice</h2>
+            <a class="cardlink" href="{%url 'invoice'%}">Invoice</a>
+        </div>
+        <div class="cards">
+            <h2>Manage Medicine</h2>
+            <a class="cardlink" href="{% url 'medicine' %}">Manage</a>
+
+        </div>
+        <div  class="cards">
+            <h2>Inventory</h2>
+            <a class="cardlink" href="{%url 'stockqty'%}">Check Inventory</a>
+        </div>
+        <div class="cards">
+            <h2>Medicine Details</h2>
+            <a  class="cardlink"href="{%url 'admin_mddetail_card' %}"> Medicine cards</a>
+        </div>
+    </div>
+
+    <div id="table-container">
+
+
+        <table>
+            <h3>Contact Us Detail </h3>
+            <tr>
+                <th>Name</th>
+                <th>Phone no</th>
+                <th>Address</th>
+
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.address}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    <div>
+
+
+        <div id="footdiv">
+            <h3> "Your health, our priority."</h3>
+
+            <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+                © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+        </div>
+
+</body>
+
+</html>

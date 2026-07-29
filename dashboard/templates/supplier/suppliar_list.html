@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmacy|suppliers</title>
+    <link rel="stylesheet" href="{%static 'supplier/suppliar_list.css'%}">
+</head>
+<body>
+    <div id="Navbar">
+        <img id="logo" src="{%static 'images/rag_logo.png'%}" alt="">
+        <div class="welcomediv">
+        <p id="welcome"> RAG</p>
+        <p id="phr">PHARMACEUTICAL</p>
+        </div>
+        <div id="linkdiv">
+            
+            <a class="link" href="{%url 'stockqty'%}">Inventory</a>
+            <a class="link" href="{%url 'placeorder'%}">Order</a>
+            <a class="link" href="{%url 'suppliarupdate' %}">Update Supplier</a>
+           
+            <a class="link" href="{%url 'medicinedetail' %}"> Medicine Detail</a>
+        
+        
+            
+        </div>
+    </div> <br><br>
+
+  <div class="table-container">
+    <table class="supplier-table">
+        <thead>
+            <tr>
+                <th>Supplier ID</th>
+                <th>Supplier Name</th>
+                <th>Company Name</th>
+                <th>Contact Person</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>GST No</th>
+                <th>Drug Licence No</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for list in list %}
+            <tr>
+                <td>{{ list.supplierid }}</td>
+                <td>{{ list.suppliername }}</td>
+                <td>{{ list.companyname }}</td>
+                <td>{{ list.contactperson }}</td>
+                <td>{{ list.mobile }}</td>
+                <td>{{ list.email }}</td>
+                <td>{{ list.gstno }}</td>
+                <td>{{ list.druglicence }}</td>
+                <td>{{ list.address }}</td>
+                <td>{{ list.city }}</td>
+                <td>{{ list.state }}</td>
+                <td>{{ list.status }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+  /* Navbar */
+#Navbar{
+    width:100%;
+    min-height:90px;
+    background:#0B6E4F;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+    box-sizing:border-box;
+    color:white;
+    flex-wrap:wrap;
+}
+
+/* Logo */
+#logo{
+    width:150px;
+    height:100px;
+    /* object-fit:contain; */
+}
+
+/* Logo Text */
+#welcome{
+    font-family:Arial, sans-serif;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:3px;
+    color:#E1F5EE;
+    margin:0;
+}
+
+#phr{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    letter-spacing:4px;
+    color:#9FE1CB;
+    margin:0;
+}
+
+/* Navigation */
+.welcomediv{
+    display:flex;
+    align-items:center;
+}
+
+#links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    padding:10px 20px;
+    border-radius:6px;
+    transition:.3s;
+}
+
+#links a:hover{
+    /* background:#ffffff; */
+    color:orange;
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+    #Navbar{
+        padding:15px 20px;
+    }
+
+    #logo{
+        width:60px;
+        height:60px;
+    }
+
+    #welcome{
+        font-size:24px;
+    }
+
+    #phr{
+        font-size:12px;
+        letter-spacing:2px;
+    }
+
+    #links a{
+        font-size:16px;
+    }
+}
+
+/* Mobile */
+@media (max-width:600px){
+
+    #Navbar{
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        gap:15px;
+        padding:20px;
+    }
+
+    #logo{
+        width:55px;
+        height:55px;
+    }
+
+    #welcome{
+        font-size:22px;
+    }
+
+    #phr{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .welcomediv{
+        width:100%;
+        justify-content:center;
+    }
+
+    #links a{
+        display:block;
+        width:180px;
+        margin:auto;
+    }
+}
+   
+
+/* 
+   Medicine Cards Section
+ */
+
+#medicards {
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cards {
+    width: 280px;
+    min-height: 180px;
+    background: #0B6E4F;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    padding: 15px;
+    text-align: center;
+}
+
+.cards:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.cards h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cardlink {
+    text-decoration: none;
+    /* background: white; */
+    color:whitesmoke;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cardlink:hover {
+    /* background: #1565C0; */
+    color: rgb(204, 161, 81);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    #medicards {
+        gap: 20px;
+    }
+
+    .cards {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    #medicards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .cards h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        padding: 18px;
+    }
+
+    .cards h2 {
+        font-size: 20px;
+    }
+
+    .cardlink {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+/* Table Container */
+
+
+
+#table-container {
+    width: 60%;
+    margin: 20px auto;
+    overflow-x: auto;
+  display: flex;
+  align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    
+}
+
+/* Table */
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Header */
+
+th {
+    background: #0B6E4F;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Data */
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+
+
+/* Hover Effect */
+
+tr:hover {
+    background: #e3f2fd;
+    transition: 0.3s;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+#footdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #0B6E4F;
+    color: #9FE1CB;
+    min-height: 20px;
+    padding: 10px;
+    gap: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #footdiv {
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #footdiv {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        gap: 8px;
+        height: auto;
+    }
+
+    #footdiv p,
+    #footdiv a,
+    #footdiv span {
+        font-size: 14px;
+    }
+}
+.link {
+    display: inline-block;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.link:hover {
+    background-color: #ff8c00; /* Orange */
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+}
+
+.link:active {
+    transform: translateY(0);
+}

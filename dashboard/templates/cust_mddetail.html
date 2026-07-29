@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy_md_detail</title>
+    <link rel="stylesheet" href="{% static 'cust_mddetail.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="medicine-container">
+
+        {% for i in data %}
+        <div class="medicine-card">
+
+            <div class="image-box">
+
+                <!-- {{ i.image.url }} <br> -->
+
+                <img src="{{ i.image.url }}" width="200">
+            </div>
+
+            <h2>{{ i.mdname }}</h2>
+
+            <p><strong>Brand:</strong> {{ i.brand }}</p>
+            <p><strong>Category:</strong> {{ i.category }}</p>
+            <p><strong>Form:</strong> {{ i.form }}</p>
+            <p><strong>Packing Size:</strong> {{ i.packingsize }}</p>
+            <p><strong>Price:</strong> ₹{{ i.price }}</p>
+            <p><strong>Availability:</strong> {{ i.availability }}</p>
+            <p><strong>Description:</strong> {{ i.description }}</p>
+            <p><strong>Uses:</strong> {{ i.used }}</p>
+            <p><strong>Side Effects:</strong> {{ i.sideeffect }}</p>
+            <p><strong>Prescription:</strong> {{ i.prescription }}</p>
+            <p><strong>Expiry Date:</strong> {{ i.expirydate }}</p>
+           
+
+
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+</body>
+
+</html>

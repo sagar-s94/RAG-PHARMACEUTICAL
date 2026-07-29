@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy_medicine_detail</title>
+    <link rel="stylesheet" href="{% static 'med_detail.css' %}">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+              
+                
+
+            </div>
+
+        </div>
+
+    </nav>
+    <br>
+
+
+    <h2>Add Medicine Details</h2>
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <label>Medicine Image</label><br>
+        <input type="file" name="image"><br><br>
+
+        <label>Medicine Name</label><br>
+        <input type="text" name="mdname"><br><br>
+
+        <label>Brand</label><br>
+        <input type="text" name="brand"><br><br>
+
+        <label>Category</label><br>
+        <input type="text" name="category"><br><br>
+
+        <label>Form</label><br>
+        <select name="form">
+            <option value="">Select Form</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Capsule">Capsule</option>
+            <option value="Syrup">Syrup</option>
+            <option value="Tube">Tube</option>
+            <option value="Injection">Injection</option>
+        </select>
+        <br><br>
+
+        <label>Packing Size</label><br>
+        <input type="text" name="packingsize"><br><br>
+
+        <label>Price</label><br>
+        <input type="number" name="price" step="0.01"><br><br>
+
+        <label>Availability</label><br>
+        <select name="availability">
+            <option value="">Select Availability</option>
+            <option value="In Stock">In Stock</option>
+            <option value="Out of Stock">Out of Stock</option>
+        </select>
+        <br><br>
+
+        <label>Description</label><br>
+        <textarea name="description" rows="1" cols="10"></textarea><br><br>
+
+        <label>Used For</label><br>
+        <textarea name="used" rows="2" cols="20"></textarea><br><br>
+
+        <label>Side Effects</label><br>
+        <textarea name="sideeffect" rows="2" cols="20"></textarea><br><br>
+
+        <label>Prescription Required</label><br>
+        <select name="prescription">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br><br>
+
+        <label>Expiry Date</label><br>
+        <input type="date" name="expirydate"><br><br>
+
+        <button type="submit">Save Medicine</button>
+
+    </form>
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+</body>
+
+</html>

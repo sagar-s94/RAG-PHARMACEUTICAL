@@ -1,0 +1,434 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/* Navbar */
+
+#Navbar{
+    width:100%;
+    background:#0B6E4F;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 30px;
+    flex-wrap:wrap;
+}
+
+#logo{
+    width:180px;
+    height:100px;
+    /* object-fit:cover; */
+}
+
+.welcomediv{
+    display:flex;
+    flex-direction:column;
+    margin-left:15px;
+    flex:1;
+}
+
+#welcome{
+    font-size:30px;
+    font-weight:bold;
+}
+
+#phr{
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+#linkdiv{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.link{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.link:hover{
+    color:#FFD369;
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+    #Navbar{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    #logo{
+        margin-bottom:10px;
+    }
+
+    .welcomediv{
+        margin:10px 0;
+        align-items:center;
+    }
+
+    #linkdiv{
+        width:100%;
+        justify-content:center;
+        margin-top:15px;
+        gap:15px;
+    }
+
+    .link{
+        font-size:17px;
+    }
+
+}
+@media(max-width:480px){
+
+    #Navbar{
+        padding:15px;
+    }
+
+    #logo{
+        width:60px;
+        height:60px;
+    }
+
+    #welcome{
+        font-size:24px;
+    }
+
+    #phr{
+        font-size:12px;
+    }
+
+    #linkdiv{
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    .link{
+        width:100%;
+        text-align:center;
+        padding:10px;
+        border-radius:5px;
+        background:#0B6E4F;
+    }
+
+    .link:hover{
+        background:orange;
+    }
+
+}
+
+body{
+    background:#eef2f7;
+    padding:0px;
+}
+
+body>div{
+    max-width:950px;
+    margin:auto;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    overflow:hidden;
+}
+
+/*HEADER =*/
+
+#heading{
+    background:#0B6E4F;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+#heading h2{
+    font-size:30px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+#heading h3{
+    font-size:18px;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+#heading h4{
+    font-size:15px;
+    font-weight:400;
+}
+
+/* INVOICE DETAILS =*/
+
+#secnddiv{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    padding:25px;
+    border-bottom:2px solid #ddd;
+}
+
+.innerdiv{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    flex:1;
+}
+
+.innerdiv strong{
+    font-size:15px;
+    color:#333;
+}
+
+/* TABLE =*/
+
+#thirddiv{
+    padding:25px;
+}
+
+#thirddiv h3{
+    color:#0B6E4F;
+    margin-bottom:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#0B6E4F;
+    color:white;
+    padding:12px;
+    font-size:15px;
+}
+
+table td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+table tr:nth-child(even){
+    background:#f8f8f8;
+}
+
+table tr:hover{
+    background:#edf8f4;
+}
+
+/*= TOTALS =*/
+
+#four-div{
+    width:320px;
+    margin-left:auto;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#four-div strong{
+    display:flex;
+    justify-content:space-between;
+    font-size:16px;
+}
+
+/*=GRAND TOTAL =*/
+
+#Gtotal{
+    background:#0B6E4F;
+    color:white;
+    margin:0 25px;
+    padding:18px;
+    border-radius:6px;
+    text-align:right;
+    font-size:22px;
+    font-weight:bold;
+}
+
+
+
+#paydiv{
+    padding:25px;
+}
+
+#paydiv h3{
+    color:#0B6E4F;
+    margin-bottom:10px;
+}
+
+/*SIGNATURE */
+
+#sign{
+    display:flex;
+    justify-content:space-between;
+    padding:40px 25px;
+}
+
+#sign strong{
+    border-top:2px solid #000;
+    width:220px;
+    text-align:center;
+    padding-top:8px;
+}
+
+/* BUTTONS */
+
+button{
+    background:#0B6E4F;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    margin:20px 10px 30px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#ff9800;
+}
+
+body>div{
+    text-align:center;
+}
+
+#heading,
+#secnddiv,
+#thirddiv,
+#four-div,
+#Gtotal,
+#paydiv,
+#sign{
+    text-align:left;
+}
+
+/*TABLET */
+
+@media(max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    #heading h2{
+        font-size:24px;
+    }
+
+    #heading h3{
+        font-size:16px;
+    }
+
+    #heading h4{
+        font-size:13px;
+    }
+
+    #secnddiv{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    table{
+        min-width:650px;
+    }
+
+    #thirddiv{
+        overflow-x:auto;
+    }
+
+    #four-div{
+        width:100%;
+        padding:20px;
+    }
+
+    #Gtotal{
+        margin:0 20px;
+        text-align:center;
+        font-size:20px;
+    }
+
+    #sign{
+        flex-direction:column;
+        gap:40px;
+        align-items:center;
+    }
+
+    button{
+        width:90%;
+        margin:10px auto;
+        display:block;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    #heading{
+        padding:18px;
+    }
+
+    #heading h2{
+        font-size:20px;
+    }
+
+    #heading h3{
+        font-size:14px;
+    }
+
+    #heading h4{
+        font-size:12px;
+    }
+
+    table th,
+    table td{
+        font-size:12px;
+        padding:8px;
+    }
+
+    #Gtotal{
+        font-size:18px;
+    }
+
+    #sign strong{
+        width:180px;
+    }
+
+}
+
+/* PRINT */
+
+@media print{
+
+    body{
+        background:white;
+        padding:0;
+    }
+
+    body>div{
+        width:100%;
+        max-width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    button{
+        display:none;
+    }
+
+}

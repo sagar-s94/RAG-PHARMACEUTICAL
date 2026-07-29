@@ -1,0 +1,69 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'cust_profile.css' %}">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+                <a href="{% url 'detailcard' %}"> Medicine Details</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <div id="bodydiv">
+        <div id="profilediv">
+            <strong>Name</strong>
+            <h2>{{ profile.name }}</h2>
+            <strong>Email</strong>
+            <p>{{ profile.email }}</p>
+            <strong>Phone</strong>
+            <p>{{ profile.phone }}</p>
+            <strong>Profession</strong>
+            <p>{{profile.profession}}</p>
+            <Strong>Organization</Strong>
+            <p>{{profile.organization}}</p>
+
+            <strong>City</strong>
+            <p>{{ profile.city }}</p>
+            <strong>Password</strong>
+            <p>********</p>
+        </div>
+    </div>
+
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+</body>
+
+</html>

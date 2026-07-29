@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmacy|Mddetial|update</title>
+    <link rel="stylesheet" href="{% static 'med_deupdate.css' %}">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'detailcard' %}">Medicines</a>
+            </div>
+
+        </div>
+
+    </nav>
+    <br>
+
+    <form id="formserch" method="GET">
+
+        <input type="text" name="search" placeholder="Enter Medicine Name">
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+    <div class="medicine-container">
+        {% for detail in md %}
+        <div class="medicine-card">
+            <div class="image-box">
+                <img src="{{ detail.image.url }}" width="200">
+            </div>
+
+            <h2>{{detail.mdname}}</h2>
+            <p><strong>Brand:</strong> {{ detail.brand }}</p>
+            <p><strong>Category:</strong> {{ detail.category }}</p>
+            <p><strong>Form:</strong> {{ detail.form }}</p>
+            <p><strong>Packing Size:</strong> {{ detail.packingsize }}</p>
+            <p><strong>Price:</strong> ₹{{ detail.price }}</p>
+            <p><strong>Availability:</strong> {{ detail.availability }}</p>
+            <p><strong>Description:</strong> {{ detail.description }}</p>
+            <p><strong>Uses:</strong> {{ detail.used }}</p>
+            <p><strong>Side Effects:</strong> {{ detail.sideeffect }}</p>
+            <p><strong>Prescription:</strong> {{ detail.prescription }}</p>
+            <p><strong>Expiry Date:</strong> {{ detail.expirydate }}</p>
+            <button id="editcard"><a href="{% url 'editdetail' detail.id %}">Edit</a></button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+
+
+</body>
+
+</html>

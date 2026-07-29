@@ -1,0 +1,95 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy_edit_medicine</title>
+    <link rel="stylesheet" href="{% static 'al_edit.css' %}">
+</head>
+
+<body>
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+            </div>
+
+        </div>
+
+    </nav> 
+<br>
+
+<div id="editcard">
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input type="hidden" name="id" value="{{ md.id }}">
+
+        <label for="">Name</label>
+        <input type="text" name="name" value="{{ md.name }}">
+
+        <label for="">Conpany</label><input type="text" name="company" value="{{ md.company }}">
+
+        <label class="label">Form</label>
+        <select name="category" class="label" value="{{md.category}}">
+            <option>Select form</option>
+            <option>Teblet</option>
+            <option>Capsule</option>
+            <option>Syrup</option>
+            <option>Churan</option>
+            <option>Tube</option>
+        </select>
+
+        <label for="">Quantity</label><input type="number" name="quantity" value="{{ md.quantity }}">
+
+        <label class="label">Packing Size</label>
+        <input class="input" type="text" placeholder="Packing Size" name="packing_size"
+            value="{{md.packing_size}}">
+
+
+
+        <label class="label">MRP</label>
+        <input class="input" type="text" placeholder="Price" name="price" value="{{md.price}}">
+
+        <label class="label">Expiry Date</label>
+        <input class="input" type="date" placeholder="Expiry Date" name="expirydate" value="{{md.expirydate}}">
+
+
+        <button type="submit">
+            Update
+        </button>
+
+    </form>
+
+    </div>
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+
+    
+</body>
+
+</html>

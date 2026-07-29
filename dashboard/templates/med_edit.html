@@ -1,0 +1,120 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmacy|Edit|card</title>
+    <link rel="stylesheet" href="{%static 'med_edit.css'%}">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+                <a href="{% url 'medicinedetail' %}">Order Medicine</a>
+                <a href="{% url 'updatedetial' %}">Update Detail</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <br>
+    <h2>Edit Medicine Details</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Medicine Image</label><br>
+
+        {% if detail.image %}
+        <img src="{{ medicine.image.url }}" width="120"><br><br>
+        {% endif %}
+
+        <input type="file" name="image"><br><br>
+
+        <label>Medicine Name</label><br>
+        <input type="text" name="mdname" value="{{ detial.mdname }}"><br><br>
+
+        <label>Brand</label><br>
+        <input type="text" name="brand" value="{{ detail.brand }}"><br><br>
+
+        <label>Category</label><br>
+        <input type="text" name="category" value="{{ detail.category }}"><br><br>
+
+        <label>Form</label><br>
+        <select name="form">
+            <option value="Tablet">Tablet</option>
+            <option value="Capsule" >Capsule</option>
+            <option value="Syrup" >Syrup</option>
+            <option value="Tube" >Tube</option>
+            <option value="Injection">Injection</option>
+        </select>
+        <br><br>
+
+        <label>Packing Size</label><br>
+        <input type="text" name="packingsize" value="{{ detail.packingsize }}"><br><br>
+
+        <label>Price</label><br>
+        <input type="number" name="price" step="0.01" value="{{ detial.price }}"><br><br>
+
+        <label>Availability</label><br>
+        <select name="availability">
+            <option value="In Stock">In Stock</option>
+            <option value="Out of Stock">Out of Stock
+            </option>
+        </select>
+        <br><br>
+
+        <label>Description</label><br>
+        <textarea name="description"> {{ detail.description }}</textarea><br><br>
+
+        <label>Used For</label><br>
+        <textarea name="used">{{ detail.used }}</textarea><br><br>
+
+        <label>Side Effects</label><br>
+        <textarea name="sideeffect">{{ detail.sideeffect }}</textarea><br><br>
+
+        <label>Prescription Required</label><br>
+        <select name="prescription">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br><br>
+
+        <label>Expiry Date</label><br>
+        <input type="date" name="expirydate" value="{{ detail.expirydate|date:'Y-m-d' }}"><br><br>
+
+        <button type="submit">Update Medicine</button>
+    </form>
+
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+
+</body>
+
+</html>

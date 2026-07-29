@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragpharmcy/customer/Home</title>
+    <link rel="stylesheet" href="{% static 'custhome.css'%}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav id="Navbar">
+
+
+        <img id="logo" src="{% static 'images/rag_logo.png' %}" alt="RAG Pharmacy Logo">
+        <div>
+            <h2 id="welcome">RAG</h2>
+            <p id="phr">PHARMACEUTICAL</p>
+        </div>
+
+        <div class="welcomediv">
+
+
+
+            <div id="links">
+
+
+                <a href="{% url 'total_medicine' %}">Medicines</a>
+                <a href="{% url 'detailcard' %}"> Medicine Details</a>
+                <a href="{%url 'profile' %}"> Profile</a>
+                <a href="{% url 'cust_logout' %}">Logout</a>
+                
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <div id="bodydiv">
+        <div id="gurbani_tok">
+            <h2>"
+                ੴ <br>
+                ਸਰਭ ਰੋਗ ਕਾ ਅਉਖਦੁ ਨਾਮੁ ॥</h2>
+            <p>ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਸਾਰੇ ਰੋਗਾਂ ਦੀ ਦਵਾਈ ਹੈ।</p>
+            <h6>— ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ · ਸੁਖਮਨੀ ਸਾਹਿਬ</h6>
+        </div>
+        <div id="content">
+            <div id="guidance-card">
+                <h2>💊 Need Medicine Guidance?</h2>
+
+                <p>
+                    Have questions about your medicines? Our pharmacy team is here to help.
+                    Get reliable guidance on dosage, medicine availability, general usage,
+                    and healthcare products.
+                </p>
+
+                <div class="guide-info">
+                    <p>📞 Call Us: +91 99146 13763</p>
+                    <p>🕒 Mon – Sat | 9:00 AM – 8:00 PM</p>
+                </div>
+
+                <button>Contact Us</button>
+            </div>
+
+            <div id="divs">
+                <div class="innerdiv">🏥 1000+ Happy Customers</div>
+                <div class="innerdiv">💊 300+ Medicines Available</div>
+                <div class="innerdiv">⭐ 4.9/5 Customer Rating</div>
+                <div class="innerdiv">👨‍⚕️ 8+ Years of Experience</div>
+                <div class="innerdiv">🚚 2,500+ Orders Delivered</div>
+
+
+            </div>
+            <div id="ourmission">
+                <h2>Our Mission</h2>
+                <p class="ompara"> At <b> Rag Pharmacy</b>, our mission is to deliver exceptional pharmaceutical care
+                    grounded in clinical
+                    excellence, compassion, and an unwavering commitment to the health of every patient we serve.
+                    We believe that every individual deserves more than just a prescription — they deserve a trusted
+                    healthcare partner who understands their unique medical needs, listens carefully, and provides
+                    personalized guidance at every step of their wellness journey.</p>
+            </div>
+
+            <div id="ourcommit">
+                <h2>Our Commitment to You</h2>
+                <p class="ompara"> We are committed to building lasting relationships with our patients — not just
+                    filling prescriptions,
+                    but actively participating in your long-term health outcomes. Whether you are managing a chronic
+                    condition, navigating a new diagnosis, or simply seeking professional health advice, our team is
+                    here
+                    for you.
+
+                    "Your health is personal to us. We treat every patient with the care and attention we would give to
+                    our
+                    own family."</p>
+            </div>
+        </div>
+        {% if messages %}
+    {% for message in messages %}
+        <div class="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+        <div id="card">
+            <h2><b>Contact Us!</b></h2>
+            <form method="POST">
+                {%csrf_token%}
+                <strong>Name:</strong><input class="input" type="text" name="name">
+                <strong>Phone:</strong><input class="input" type="text" name="phone">
+                <strong>Address:</strong><input class="input" type="text" name="address">
+                <button>Submit</button>
+            </form>
+        </div>
+
+
+
+
+    </div>
+    <hr>
+    </div>
+    <div id="footdiv">
+        <h3> "Your health, our priority."</h3>
+
+        <div> 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+            © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+    </div>
+</body>
+
+</html>

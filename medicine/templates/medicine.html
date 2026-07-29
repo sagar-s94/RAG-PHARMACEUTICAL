@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragphamacy</title>
+    <link rel="stylesheet" href="{% static 'md_dashboard.css'%}">
+</head>
+
+<body>
+
+   
+    <div id="Navbar">
+        <img id="logo" src="{%static 'images/rag_logo.png'%}" alt="">
+        <div class="welcomediv">
+           <h2 id="welcome">RAG PHARMACEUTICAL</h2>
+            <p id="phr"></p>
+            
+        </div>
+        <div id="linkdiv">
+           
+            <a class="link" href="{%url 'stockqty'%}">Stock Qty</a>
+           
+            <a class="link" href="{%url 'custmorpro'%}">Customer</a>
+
+            <h3 id="icon"><i class="ri-menu-line"></i></h3>
+        </div>
+    </div> 
+    <hr> 
+    <div id="bodydiv">
+
+        
+        
+
+        <div id="catagory">
+
+            <div class="AyAll">
+             <button class="heading">AYURVEDIC </button><br>
+                <button class="buttonss"> <a class="cardlink" href="{% url 'ayurvedic_medicine_add' %}">Add</a></button><br>
+                
+                <button class="buttonss"> <a class="cardlink" href="{% url 'ayurvedic_medicine_update' %}">Update</a></button><br>
+     
+                <button class="buttonss"> <a class="cardlink" href="{%url 'ayurvedic_medicine_veiwdetail' %}">veiwdetail</a></button> <br>
+
+
+            </div>
+
+            <div class="AyAll">
+             <button class="heading">  ALLOPATHY</button> <br>
+                <button class="buttonss"> <a class="cardlink" href="{% url 'allopathy_medicine_add'%}">Add</a></button><br>
+               
+                <button class="buttonss" > <a class="cardlink" href="{%url 'allopathy_medicine_update'%}">Update</a></button> <br>
+   
+                <button class="buttonss"> <a class="cardlink" href="{%url 'allopathy_medicine_veiwdetail' %}">Veiwdetail</a></button><br>
+            </div>
+
+
+
+        </div>
+     
+    </div> <br><br><br><br><br>
+          <div id="footdiv">
+            <h3> "Your health, our priority."</h3>
+
+            <div > 📍 Shahdin Wala,Ferzepur,152004 | 📞 +91-9914613763 | 📧 info@Ragpharmcy.com
+
+                © 2026 Rag Pharmacy. All Rights Reserved.</div>
+
+        </div>
+</body>
+
+</html>
