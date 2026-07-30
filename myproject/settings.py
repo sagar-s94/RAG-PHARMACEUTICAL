@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 if os.environ.get("DATABASE_URL"):
     DATABASES = {
         "default": dj_database_url.config(
@@ -73,7 +73,7 @@ else:
         }
     }
 ROOT_URLCONF = 'myproject.urls'
-
+SECRET_KEY = os.environ.get("SECRET_KEY", "your-local-secret-key")
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
