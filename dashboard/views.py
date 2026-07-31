@@ -65,9 +65,10 @@ def login(request):
         password = request.POST.get("password")
 
         user = Customer.objects.filter(phone=phone).first()
+        print("User found:", user)
 
         if user:
-            if  (password == user.password):
+            if check_password(password, user.password):
 
                 request.session["user_id"] = user.id
                 request.session["user_name"] = user.name
@@ -85,7 +86,7 @@ def login(request):
 
 def admin_logout(request):
     request.session.flush()   # Remove all session data
-    return redirect("login.html")
+    return redirect("login")
 
         
 
