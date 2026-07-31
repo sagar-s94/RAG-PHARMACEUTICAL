@@ -21,7 +21,7 @@ from django.db.models import Q
         
 def dashboard(request):
    if "user_id" not in request.session:
-    return redirect("'login.html") 
+    return redirect("login") 
    detail=contact_us.objects.all()
    return render(request, "index.html",{"data":detail})
 
@@ -30,7 +30,7 @@ def register(request):
         form = new_customer(request.POST)
         if form.is_valid():
             form.save()  # ModelForm can save directly!
-        return redirect("dashboard")
+            return redirect("dashboard")
     else:
         form = new_customer()
 
@@ -63,12 +63,16 @@ def login(request):
 
         phone = request.POST.get("phone")
         password = request.POST.get("password")
+        print("Entered phone:", phone)
+        print(Customer.objects.values_list("phone", flat=True))
 
         user = Customer.objects.filter(phone=phone).first()
         print("User found:", user)
 
         if user:
-            if check_password(password, user.password):
+            print("Stored password:", user.password)
+            print("Password match:", check_password(password, user.password))
+            if user.password == password:
 
                 request.session["user_id"] = user.id
                 request.session["user_name"] = user.name
@@ -83,6 +87,8 @@ def login(request):
             return render(request, "login.html",
                 {"message": "Phoneno does not exist"})
     return render (request,"login.html")
+
+
 
 def admin_logout(request):
     request.session.flush()   # Remove all session data

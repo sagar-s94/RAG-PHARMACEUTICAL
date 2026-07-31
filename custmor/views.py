@@ -8,5 +8,3 @@ def custmor_profile(request):
 
     return render(request,"custmorpro.html",{"cusignups": cusignups})
 
-def prchhistory(request):
-    return render(request,"prchshistory.html")
