@@ -85,7 +85,7 @@ def login(request):
 
 def admin_logout(request):
     request.session.flush()   # Remove all session data
-    return redirect("login")
+    return redirect("login.html")
 
         
 
