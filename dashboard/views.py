@@ -79,11 +79,11 @@ def login(request):
         else:
             return render(request, "login.html",
                 {"message": "Phoneno does not exist"})
-    return render (request,"login")
+    return render (request,"login.html")
 
 def admin_logout(request):
     request.session.flush()   # Remove all session data
-    return redirect("login")
+    return redirect("login.html")
 
         
 
