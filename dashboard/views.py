@@ -45,6 +45,8 @@ def cu_signup(request):
             user.password = make_password(form.cleaned_data['password'])
             user.save()
             return redirect("customerhome")
+        else:
+            print(form.errors)
     else:
         
         form = customer_signup()

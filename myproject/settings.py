@@ -55,13 +55,23 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-DATABASES ={
-    'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
-}
-
+if os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=os.environ.get("DATABASE_URL")
+        )
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "ragpharmacy",
+            "USER": "postgres",
+            "PASSWORD": "9417672741",
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
+    }
 ROOT_URLCONF = 'myproject.urls'
 SECRET_KEY = os.environ.get("SECRET_KEY", "your-local-secret-key")
 TEMPLATES = [
