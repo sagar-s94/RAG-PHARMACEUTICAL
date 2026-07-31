@@ -30,7 +30,7 @@ def register(request):
         form = new_customer(request.POST)
         if form.is_valid():
             form.save()  # ModelForm can save directly!
-        return redirect("index.html")
+        return redirect("dashboard")
     else:
         form = new_customer()
 
