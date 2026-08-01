@@ -58,35 +58,37 @@ def cu_signup(request):
     
 
 def login(request):
-
     if request.method == "POST":
-
         phone = request.POST.get("phone")
         password = request.POST.get("password")
-        print("Entered phone:", phone)
-        print(Customer.objects.values_list("phone", flat=True))
+
+        print("Entered phone:", repr(phone))
+        print("Entered password:", repr(password))
 
         user = Customer.objects.filter(phone=phone).first()
-        print("User found:", user)
+
+        print("User:", user)
 
         if user:
-            print("Stored password:", user.password)
-            print("Password match:", check_password(password, user.password))
-            if user.password == password:
+            print("Stored phone:", repr(user.phone))
+            print("Stored password:", repr(user.password))
 
+            print("Phone Match:", user.phone == phone)
+            print("Password Match:", user.password == password)
+
+            if user.password == password:
                 request.session["user_id"] = user.id
                 request.session["user_name"] = user.name
-
                 return redirect("dashboard")
-
             else:
-                return render(request, "login.html",
-                              {"message": "Incorrect Password"})
+                print("Password is incorrect")
+                return render(request, "login.html", {"message": "Incorrect Password"})
 
         else:
-            return render(request, "login.html",
-                {"message": "Phoneno does not exist"})
-    return render (request,"login.html")
+            print("Phone not found")
+            return render(request, "login.html", {"message": "Phone number does not exist"})
+
+    return render(request, "login.html")
 
 
 
