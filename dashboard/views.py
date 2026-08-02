@@ -302,8 +302,9 @@ def addsupplier(request):
             city=city,
             state=state,
             status=status,
-
-        )
+            )
+        messages.success(request, "Supplier added successfully!")
+        return redirect("addsupplier") 
 
 
     return render(request,"supplier/addsupplier.html")

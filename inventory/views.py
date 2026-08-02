@@ -22,7 +22,7 @@ def stockin(request):
         newstock = int(request.POST.get("newstock"))
         unit = request.POST.get("unit")
         unitprice = Decimal(request.POST.get("unitprice"))
-        totalamount =Decimal(max_digits=12, decimal_places=2)
+        
         
         purchasedate = request.POST.get("purchasedate")
         supplier = request.POST.get("supplier")
@@ -54,7 +54,7 @@ def stockin(request):
             lastupdate=lastupdate,
             remark=remark,
         )
-    messages.success(request, "Stock added successfully!")
+        messages.success(request, "Stock added successfully!")
     return render(request,"stockreport/stockin.html")
 
 
@@ -156,6 +156,7 @@ def stockout(request):
             lastdate=lastdate,
             remark=remark
         )
+        messages.success(request, "Stock Out successfully!")
 
   
 
