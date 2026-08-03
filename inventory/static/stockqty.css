@@ -28,8 +28,9 @@ body{
 /* Logo */
 #logo{
     width:150px;
-    height:100px;
+    height:90px;
     border-radius:50%;
+   
     object-fit:cover;
 }
 
